@@ -46,6 +46,10 @@ class App extends Component {
     this.state = initialState;
   }
 
+  componentDidMount() {
+    document.title = "FaceRecognitionBrain";
+  }
+
   loadUser = (data) => {
     this.setState({
       user: {
