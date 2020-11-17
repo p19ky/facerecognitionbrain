@@ -91,7 +91,7 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
 
-    fetch("https://sleepy-earth-09210.herokuapp.com/imageurl", {
+    fetch(`${process.env.backend}/imageurl`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -102,7 +102,7 @@ class App extends Component {
       .then((response) => {
         if (response) {
           // console.log(this.state.user.id);
-          fetch("https://sleepy-earth-09210.herokuapp.com/image", {
+          fetch(`${process.env.backend}/image`, {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
